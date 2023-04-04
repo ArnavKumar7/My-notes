@@ -37,3 +37,27 @@ body {
   );
   min-height: 100vh;
 }
+
+#main-navigation {
+  display: flex;
+  justify-content: center;
+}
+
+#main-navigation ul {
+  list-style: none;
+  margin-top: 20px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: var(--color-primary-50);
+}
+
+.nav-item a:hover,
+.nav-item a:active {
+  color: var(--color-primary-200);
+}
