@@ -1,6 +1,8 @@
-import { Form } from "@remix-run/react";
+import { Form, useNavigation } from "@remix-run/react";
 
 export default function () {
+  const navigation = useNavigation();
+  const isSubmitting = navigation.state === "submitting";
   return (
     <main>
       <Form method="post" id="note-form">
@@ -13,7 +15,9 @@ export default function () {
           <textarea id="content" name="content" required />
         </p>
         <div className="form-actions">
-          <button>Add Note</button>
+          <button disabled={isSubmitting}>
+            {isSubmitting ? "Adding..." : "Add Note"}
+          </button>
         </div>
       </Form>
     </main>
